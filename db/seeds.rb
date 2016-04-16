@@ -24,7 +24,7 @@ def rand_time(weight, prgn)
 end
 
 prgn = Random.new 
-100.times do |time|
+5.times do |time|
   weight = prgn.rand(120)
   Person.create! name: "Person #{time}", description: "Description person #{time}", weight: weight, born: rand_time(weight, prgn)  
 end
