@@ -11,15 +11,7 @@
 
   <tbody>
     <% @people.each do |person| %>
-      <tr>
-        <td><%= person.name %></td>
-        <td><%= person.weight %></td>
-        <td><%= person.born %></td>
-        <td><%= person.description %></td>
-        <td><%= link_to 'Show', person %></td>
-        <td><%= link_to 'Edit', edit_person_path(person) %></td>
-        <td><%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <%= render partial: 'person_row', locals: { person: person } %>
     <% end %>
   </tbody>
 </table>
