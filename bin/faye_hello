@@ -1,0 +1,6 @@
+#!/bin/bash
+
+MESSAGE=$1
+[ -z "$MESSAGE" ] && MESSAGE="hello"
+
+curl http://localhost:9292/faye -d "message={\"channel\":\"/test\", \"data\":\"$MESSAGE\"}"
