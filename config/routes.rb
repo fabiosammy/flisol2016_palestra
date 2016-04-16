@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'ajax/pooling'
+
+  get 'ajax/long_pooling'
+
   get 'faye/index'
 
   resources :people
