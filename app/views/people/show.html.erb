@@ -1,24 +1,24 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @person.name %>
-</p>
-
-<p>
-  <strong>Weight:</strong>
-  <%= @person.weight %>
-</p>
-
-<p>
-  <strong>Born:</strong>
-  <%= @person.born %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @person.description %>
-</p>
-
-<%= link_to 'Edit', edit_person_path(@person) %> |
-<%= link_to 'Back', people_path %>
+<div class="ui items">
+  <div class="item">
+    <div class="image">
+      <!--<img src="/images/wireframe/image.png">-->
+    </div>
+    <div class="content">
+      <a class="header"><strong>Name:</strong> <%= @person.name %></a>
+      <div class="meta"><span>Born: <%= @person.born %></span></div>
+      <div class="description">
+        <p><%= @person.description %></p>
+      </div>
+      <div class="extra">
+        <strong>Weight:</strong><%= @person.weight %>
+      </div>
+    </div>
+  </div>
+  <div class="item">
+    <div class="image"></div>
+    <div class="content"><div class="description">
+    <%= link_to 'Edit', edit_person_path(@person) %> |
+    <%= link_to 'Back', people_path %>
+  </div></div>
+  </div>
+</div>

@@ -8,6 +8,13 @@
 </head>
 <body>
 
+<div class="ui poiting menu">
+  <%= link_to 'Listing People', people_path, class: "item" %>
+  <%= link_to 'New Person', new_person_path, class: "item" %>
+</div>
+
+<div class="ui segment"><p id="notice"><%= semantic_flash %></p></div>
+
 <%= yield %>
 
 </body>
