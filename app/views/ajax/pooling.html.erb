@@ -1,2 +1,43 @@
 <h1>Ajax#pooling</h1>
 <p>Find me in app/views/ajax/pooling.html.erb</p>
+
+<script>
+function poll(){
+  setTimeout(function(){
+    $.ajax({ url: "/people.json", success: function(data){
+      $('#people_tbody').html("");
+      //Update your table
+      $.each(data, function(i, item) {
+        var $tr = $('<tr>').append(
+          $('<td>').text(item.name),
+          $('<td>').text(item.weight),
+          $('<td>').text(item.born),
+          $('<td>').text(item.description)
+        ).appendTo('#people_tbody');
+      });
+
+      //Setup the next poll recursively
+      poll();
+    }, dataType: "json"});
+  }, 3000);
+};
+poll();
+</script>
+
+<div id="people_main">
+  <table class="ui selectable celled table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Weight</th>
+        <th>Born</th>
+        <th>Description</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody id="people_tbody">
+    </tbody>
+  </table>
+
+</div>
