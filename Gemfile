@@ -29,6 +29,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Unicorn as the app server
 # gem 'unicorn'
 gem 'puma', '~> 3.4'
+gem 'thin', '~> 1.6', '>= 1.6.4'
+gem 'faye', '~> 1.1', '>= 1.1.2'
+gem 'sync', '~> 0.4.0'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
